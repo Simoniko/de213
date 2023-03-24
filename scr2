@@ -1,0 +1,14 @@
+if (_G.NameSpoofer) then
+	local CoreGui = game:GetService("CoreGui");
+	local LocalPlayer = game:GetService("Players").LocalPlayer;
+	coroutine.wrap(function()
+		while true do
+			pcall(function()
+				CoreGui.RobloxGui.TopBarContainer.NameHealthContainer.Username.Text = (_G.Name);
+				LocalPlayer.PlayerGui.playerStatus.Frame.playerName.Text = (_G.Name);
+				LocalPlayer.Character.playerNameplate.Frame.name.Text = (_G.Name);
+			end);
+			wait(1 / 30);
+		end;
+	end)();
+end;
